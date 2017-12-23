@@ -1,6 +1,7 @@
 import React from 'react';
 import BookingDetails from './BookingDetails';
 import SearchHistory from './SearchHistory';
+import ApiUrl from './Constants';
 
 class BookingSearch extends React.Component {
 	state = {
@@ -18,10 +19,7 @@ class BookingSearch extends React.Component {
 	}
 
 	searchBookings = (query) => {
-		let url = `bookings/${query}`;
-		if (this.props.location.pathname !== "/") {
-			url = `${query}`;
-		}
+		let url = `${ApiUrl}bookings/${query}`;
 
 	  return fetch(url, {
 	    accept: 'application/json',

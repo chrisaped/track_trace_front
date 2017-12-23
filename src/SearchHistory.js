@@ -1,4 +1,5 @@
 import React from 'react';
+import ApiUrl from './Constants';
 
 class SearchHistory extends React.Component {
 	state = {
@@ -7,7 +8,7 @@ class SearchHistory extends React.Component {
 	};
 
   componentWillMount() {
-		const url = 'searches';
+		const url = ApiUrl +'searches';
 	  return fetch(url, {
 	    accept: 'application/json',
 	  }).then(response => {
@@ -25,7 +26,7 @@ class SearchHistory extends React.Component {
 	}
 
 	deleteSearchHistory = () => {
-		const url = 'searches';
+		const url = ApiUrl + 'searches';
 	  return fetch(url, {
 	    method: 'delete',
 	  }).then(response => {

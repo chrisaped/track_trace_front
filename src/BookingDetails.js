@@ -1,4 +1,5 @@
 import React from 'react';
+import ApiUrl from './Constants';
 
 class BookingDetails extends React.Component {
 	state = {
@@ -15,7 +16,7 @@ class BookingDetails extends React.Component {
 
 	saveSearch = () => {
     const { searchValue } = this.props;
-	  const url = 'search/?search[booking_number]=' + searchValue;
+	  const url = ApiUrl + 'search/?search[booking_number]=' + searchValue;
 	  return fetch(url, {
 	    method: 'post',
 	    body: JSON.stringify(searchValue),
